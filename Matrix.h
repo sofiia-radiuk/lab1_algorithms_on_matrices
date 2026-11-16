@@ -194,11 +194,16 @@ template <typename T>
 Matrix<T> strassenMultiply(const Matrix<T>& A, const Matrix<T>& B, std::size_t threshold = 64);
 
 // ============================================================================
-//  TASK 2 (member B): inverse matrix via the Gauss-Jordan method
-//  Create GaussJordan.cpp and implement:
+//  TASK 2: inverse matrix via the Gauss-Jordan method (GaussJordan.cpp)
 //
-//      template <typename T> Matrix<T> inverseGaussJordan(const Matrix<T>& A);
-//
+//  Returns A^-1 for a square matrix A (partial pivoting by abs(z)).
+//  Throws std::invalid_argument if A is not square and std::runtime_error
+//  if A is singular. Instantiated for Complex<double> and Complex<float>.
+// ============================================================================
+template <typename T>
+Matrix<T> inverseGaussJordan(const Matrix<T>& A);
+
+// ============================================================================
 //  TASK 3 (member C): inverse matrix via LU decomposition
 //  Create LUInverse.cpp and implement:
 //
