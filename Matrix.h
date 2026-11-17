@@ -204,14 +204,14 @@ template <typename T>
 Matrix<T> inverseGaussJordan(const Matrix<T>& A);
 
 // ============================================================================
-//  TASK 3 (member C): inverse matrix via LU decomposition
-//  Create LUInverse.cpp and implement:
+//  TASK 3: inverse matrix via LU decomposition (LU.cpp)
 //
-//      template <typename T> Matrix<T> inverseLU(const Matrix<T>& A);
-//
-//  Hint: use abs(z) from Complex.h to choose the pivot element, and use
-//  strassenMultiply(A, Ainv) compared with Matrix<T>::identity(n) to verify
-//  the result.
+//  Returns A^-1 for a square matrix A using LUP decomposition (PA = LU) with
+//  partial pivoting by abs(z), followed by forward and back substitution.
+//  Throws std::invalid_argument if A is not square and std::runtime_error
+//  if A is singular. Instantiated for Complex<double> and Complex<float>.
 // ============================================================================
+template <typename T>
+Matrix<T> inverseLU(const Matrix<T>& A);
 
 #endif  // MATRIX_H
